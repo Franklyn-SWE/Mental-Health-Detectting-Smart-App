@@ -1,0 +1,49 @@
+{% extends 'partials/base.html' %}		   <!-- FRANKLYN OLIHA  ID: 1611857-->
+<!--   View messages -->
+{%  block title %}  Index | {{block.super}} {% endblock %} <!-- To get the title tag - dynamically!!-->
+
+{% block content %}
+
+<div style="padding: 20px 100px 20px 100px">
+	<hr class="bg-white">
+		<a href="../../../" role="button" class="btn btn-dark btn-lg btn-block border-button-radius">Return To Menu</a>
+	<hr class="bg-white">
+
+	<div class="pt-4">
+		<table>
+			<thead >
+				<tr>
+					<th>Received messages</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for x in list_of_messages %}
+				<thead>
+					<tr>
+						<th>Date</th>
+						<td>{{ x.date }}</td>
+					</tr>
+					<tr>
+						<th>Sender</th>
+						<td>{{ x.send.email }}</td>
+					</tr>
+					<tr>
+						<th>Title</th>
+						<td>{{ x.title }}</td>
+					</tr>
+					<tr>
+						<th>Body</th>
+						<td>{{ x.body }}</td>
+					</tr>
+					<tr>
+						<th></th>
+						<td></td>
+					</tr>
+				</thead>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+</div>
+
+{% endblock %}

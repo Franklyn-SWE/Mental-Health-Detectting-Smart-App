@@ -1,0 +1,24 @@
+<!-- FRANKLYN OLIHA  ID: 1611857-->
+{% extends 'partials/base.html' %}		
+
+{%  block title %}  Index | {{block.super}} {% endblock %} <!-- To get the title tag - dynamically!!-->
+
+{% block content %}
+	
+<!-- Nurse Dashboard-->
+	<center><h5 class="mt-5 mb-5 text-white"><b> NURSE DASHBOARD </b></h5></center>
+
+	<div style="margin: auto; width: 60%" align="center">
+		<hr><br>
+		<a href="../../../patient_diagnosis/" role="button" class="btn btn-dark py-3 btn-md btn-block border-button-radius">Diagnosis </a>
+		<a href="../../../result/" role="button" class="btn btn-dark py-3 btn-md btn-block border-button-radius">View   Patient Details and  Diagnosis </a>
+		<a href="../../../list_all_illnesses/" role="button" class="btn btn-dark py-3 btn-block border-button-radius"> View Mental Illnesses </a>
+		<a href="../../../send_message/" role="button" class="btn btn-dark py-3 btn-md btn-block border-button-radius"> Message Admin </a>
+		<a href="../../../view_messages/" role="button" class="btn btn-dark py-3 btn-md btn-block border-button-radius"> Inbox </a>		
+	</div>
+
+{% endblock %}
+
+
+
+

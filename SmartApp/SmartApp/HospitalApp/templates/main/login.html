@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load static %} <!-- load static files!-->          <!-- FRANKLYN OLIHA  ID: 1611857-->
+<!-- Login form-->
+{# Load the bootstrap4 tag library #}
+{% load bootstrap4 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+<html style="min-height: 100%">
+	<head>
+		<meta charset="utf-8">
+		<title> {% block title %} Login Page | Smart App  {%endblock%}</title>
+		<!-- Main stylesheet -->
+		<link rel="stylesheet" href="{% static 'css/main_style.css' %}">
+	</head>
+	<style>
+		.login-respond {
+		width: 35%!important; 
+		margin-top: 9%!important;	
+		}
+
+		@media screen and (max-width: 480px) {
+		.login-respond {
+			width: 80%!important; 
+			margin-top: 5%!important;	
+			}	
+		}
+	</style>
+
+	<body style="padding:11vh; background-color: #ebeef6; background-image: url(https://www.shropshirestar.com/resizer/NNOhaxStFBa9VYRcG8AifmjngqE=/1200x0/cloudfront-us-east-1.images.arcpublishing.com/mna/UUFGZVCQPBC57LNOKJTOFRHUQI.jpg); background-size: cover"><!-- Login page background colour and image! --> <!--  background-image: url(https://hbr.org/resources/images/article_assets/2022/10/A_Oct22_06_mental-health_1058086058.jpg); background-size: cover"---->
+		<center><div class="bg-1 px-5 py-3 login-respond" style="border-radius: 10px" align="center">
+			<h2 align="center"><p class="text-white"><b> Smart App </b></p></h2>
+			<hr class="bg-white">
+			
+			<form method="post" class="mt-4" align="center">
+				{% csrf_token %}
+			{% bootstrap_form form %}
+				<div style="font-size: 17px"> 
+					<a style="outline: none; text-decoration: none; color: white!important" href="../../../registration/password_reset/"><b> Password Reset </b></a>
+				</div> <!-- Add this after u implement password change!-->
+			{% buttons %}
+			<button type="submit" class="btn mt-3 btn-primary p-2 btn-block border-button-radius">
+				<b> Login </b>
+			</button>
+			{% endbuttons %}
+			</form>
+		</div></center>
+	</body>	
+	
+</html>

@@ -1,0 +1,35 @@
+	   
+
+<!-- PATIENTS DIAGNOSIS RECORD-->
+{% extends 'partials/base.html' %}		
+
+{%  block title %}  Diagnosis Report | {{block.super}} {% endblock %} <!-- To get the title tag - dynamically!!-->
+
+{% block content %}
+
+
+
+		<a href="../../../nurse_dashboard/" role="button" class="btn btn-dark btn-lg btn-block">Return To Menu</a>
+		<hr>
+<body>
+    <div class="container mt-5">
+        <h3>Mental Illness: {{ diagnosis.mental_illness }}</h3>
+        <h1>Patient: {{ diagnosis.firstname }} {{ diagnosis.lastname }}</h1>
+        <h1>Patient Number {{ diagnosis.patient_number }}</h1>
+        <h1>Staff User: {{ diagnosis.staff_user }}</h1>
+
+        <!-- Rendering or Visualising Patient Diagnosis in Doctos's Dashboard-->
+        {% if request.user.Profile.role == 'Doctor' %}
+        <form>
+            <div class="form-group mt-4">
+                <center><h4><label for="exampleFormControlTextarea1"><b>Doctor's Comment</b></label></h4></center>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+              </div> 
+              <button type="button" class="btn btn-dark">Submit</button>   
+        </form> 
+        {% endif %}     
+</body>
+
+</html> 
+
+{% endblock %}

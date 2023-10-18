@@ -1,0 +1,47 @@
+<!-- FRANKLYN OLIHA  ID: 1611857-->
+
+<!-- patient Diagnosis Form-->
+<!DOCTYPE html>
+{% load static %} <!-- load static files!-->
+
+{# Load the bootstrap4 tag library #}
+{% load bootstrap4 %}
+
+<html lang="en">
+<head>
+    <meta charset="UFT-8">
+    <meta name="viewport" contant="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<!-- Main stylesheet -->
+	<link rel="stylesheet" href="{% static 'css/main_style.css' %}">	
+	
+	<title>Patient Diagnosis| Smart App</title>
+</head>
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+<style>
+hr {
+	background: white;
+	}
+</style>
+	<body style="padding: 20px 100px 20px 100px; background-color: #ebeef6; background-image: url(https://i0.wp.com/ese2240.seas.upenn.edu/wp-content/uploads/2018/11/background-website-light-blue-wallpapers-background-2.jpg?ssl=1); background-size: cover">
+	<div style="border-radius: 10px; padding: 30px 50px 30px 50px" class="bg-1 mb-1" align="center">
+		<h3 align="center" class="text-white">Patient Diagosis Record</h3>	
+		<hr>
+		<a href="../../../" role="button" class="btn btn-dark btn-lg btn-block border-button-radius">Return To Menu</a>
+		<hr>
+		<form method="post" action="{% url 'staff_app:patient_diagnosis' %}" novalidate>
+			{% csrf_token %}
+			{% bootstrap_form form %}
+			{% buttons %}
+				<center>
+					<button type="submit" style="width: 50%" class="btn mt-5 btn-dark btn-lg btn-block border-button-radius">
+					Submit
+					</button>
+				</center>				
+			{% endbuttons %}
+		</form>
+	</div>
+</body>
+</html>

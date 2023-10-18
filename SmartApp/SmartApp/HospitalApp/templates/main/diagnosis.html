@@ -1,0 +1,26 @@
+{% extends 'partials/base.html' %}		       
+
+{%  block title %}  Index | {{block.super}} {% endblock %} <!-- To get the title tag - dynamically!!-->
+
+{% block content %}
+<div class="container">
+    <h1>Mental Illness Information</h1>
+    <p>Here is some information on the mental illness you have been diagnosed with:</p>
+
+    {% if mental_illness == 'Depression' %}
+        <h2>Depression</h2>
+        <p>Depression is a common and serious medical illness that negatively affects how you feel, the way you think and how you act. Depression causes feelings of sadness and/or a loss of interest in activities once enjoyed. It can lead to a variety of emotional and physical problems and can decrease a person’s ability to function at work and home. </p>
+    {% elif mental_illness == 'Anxiety' %}
+        <h2>Anxiety</h2>
+        <p>Anxiety is a normal and often healthy emotion. However, when a person regularly feels disproportionate levels of anxiety, it might become a medical disorder. Anxiety disorders form a category of mental health diagnoses led by generalised anxiety disorder (GAD), panic disorder, and social anxiety disorder (SAD). </p>
+    {% elif mental_illness == 'Bipolar Disorder' %}
+        <h2>Bipolar Disorder</h2>
+        <p>Bipolar disorder, formerly called manic depression, is a mental health condition that causes extreme mood swings that include emotional highs (mania or hypomania) and lows (depression). </p>
+    {% elif mental_illness == 'Schizophrenia' %}
+        <h2>Schizophrenia</h2>
+        <p>Schizophrenia is a chronic brain disorder that affects less than one percent of the U.S. population. When schizophrenia is active, symptoms can include delusions, hallucinations, trouble with thinking and concentration, and lack of motivation. However, with treatment, most symptoms of schizophrenia will greatly improve.</p>
+    {% endif %}
+
+    <p>Please consult with your healthcare provider for more information about your diagnosis and treatment options.</p>
+</div>
+{% endblock %}

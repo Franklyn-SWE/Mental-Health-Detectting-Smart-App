@@ -1,0 +1,37 @@
+{% extends 'partials/base.html' %}		  <!-- FRANKLYN OLIHA  ID: 1611857-->
+<!-- List of mental illness and symptoms -->
+{%  block title %}  Illnesses List | {{block.super}} {% endblock %} <!-- To get the title tag - dynamically!!-->
+
+{% block content %}
+
+<div style="border-radius: 10px; padding: 40px 50px 0 50px" align="center">
+	<hr style="background: white">
+		<a href="../../../" role="button" class="btn btn-dark btn-lg btn-block border-button-radius">Return To Menu</a>
+	<hr style="background: white">
+</div>	
+<div style="border-radius: 10px; padding: 15px 50px 0px 50px" class="row">
+	{% for illness in all_illnesses %}
+	<div class="col-md-4 p-3">
+	
+		<div style="border: 2px solid black; border-radius: 10px" class="p-2">	
+			<div style="border: 1px solid white; border-radius: 10px" class="p-3">
+				<div><b> Illness Name : {{illness.mental_illness_name}} </b></div>
+					<br>
+				<div style="text-align: justify"> <span><b> Description :: </b></span> {{illness.description}} </div>
+					<br>
+			</div>
+					<br>
+					<center><div><b> SYMPTOMS  </b></div></center>
+			<div class="px-3">		        <hr style="background: white">
+			{% for symptoms in illness.symptoms.all %}
+					
+					<div>○ {{symptoms.symptom_name}} </div><br>
+			{% endfor %}
+			</div>
+		</div>
+		<br>
+	</div>
+	{% endfor%}
+</div>
+	
+{% endblock %}

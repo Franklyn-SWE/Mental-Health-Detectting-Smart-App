@@ -1,0 +1,32 @@
+<!-- Bootstrap Nav Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark text-dark">
+  <a class="navbar-brand text-dark" href="/"><h3><b><span style="color: black">Smart</span> <span style="color: white"> App </span></b></h3></a> <!--  FOR The navbar logo ie Brand!-->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent"> <!-- THIS PART IS COLLAPSABLE!!-->
+    <ul class="navbar-nav mr-auto">
+	
+	  <!--  FOR SIGNING IN DETAILS  i.e Login!   mr-auto -->
+    </ul>
+	<ul class="navbar-nav">
+	{% if request.user.is_authenticated %}
+	  
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" style="color: black" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+		<img src="/media/default-avator.png" alt="profile picture" class="navbar-img" style="width: 50px; height: 50px; float: left; border-radius: 50%; background-size: auto 100%; margin-right: 10px; margin-top: -6px"> <!-- Pass image url to show the image -->
+
+		 <span><b> {{request.user.first_name | capfirst}} {{request.user.last_name | capfirst}} </b></span> <!-- capfirst Capitalises the first letter!-->
+        </a>
+        <div style="text-align: center; border-radius: 8px; background: #87CEEB" class="dropdown-menu mt-2" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="../../../">Home Page</a>
+          <a class="dropdown-item" href="#">Profile</a>
+          <a class="dropdown-item" href="../../../logout/">Log Out</a>		  
+        </div>
+      </li>
+	{% endif %}
+	</ul>
+  </div>
+</nav>	

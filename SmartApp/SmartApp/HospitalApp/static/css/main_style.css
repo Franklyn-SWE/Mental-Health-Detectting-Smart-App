@@ -1,0 +1,39 @@
+
+/* Create a background style with 50% opacity */
+.bg-1 {
+	background-color:rgba(0,0,0,0.5);
+	color: #ffffff;
+}
+
+/* Create a white text style */
+.text-white {
+	color: #ffffff;
+}
+
+.login-btn-color {
+	background: #01A3FF;
+	color: white;
+}
+
+.login-btn-color:hover{
+	background: #0083cd;
+	color: white;
+}
+
+.border-button-radius {
+	border: 0px solid transparent;
+	border-radius: 10px!important;
+}
+
+.login-respond {
+width: 35%; 
+margin-top: 9%;	
+}
+
+@media screen and (max-width: 480px) {
+	.login-respond {
+		width: 80%; 
+		margin-top: 5%;	
+		}	
+	}
+

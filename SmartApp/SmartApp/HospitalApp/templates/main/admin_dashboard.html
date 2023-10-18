@@ -1,0 +1,23 @@
+{% extends 'partials/base.html' %}		        <!-- FRANKLYN OLIHA  ID: 1611857-->
+
+{%  block title %}  Index | {{block.super}} {% endblock %} <!-- To get the title tag - dynamically!!-->
+
+{% block content %}
+
+
+
+<center><h5 class="mt-5 mb-5 text-white"><b> ADMIN DASHBOARD </b></h5></center>
+
+	<div style="margin: auto; width: 60%" align="center">
+		<hr><br>
+		<a href="../../../staff/registration/" role="button" class="btn btn-dark py-3 tn-md btn-block border-button-radius">Register Staff</a>
+		<a href='../../../send_message/' role="button" class="btn btn-dark py-3 btn-md btn-block border-button-radius"> Respond to Queries </a>
+		<a href='../../../view_messages/' role="button" class="btn btn-dark py-3 btn-md btn-block border-button-radius"> Inbox</a>
+		<a href="#" role="button" class="btn btn-dark py-3 btn-md btn-block border-button-radius"> Control Panel</a>		
+	</div>
+
+	
+
+
+
+{% endblock %}

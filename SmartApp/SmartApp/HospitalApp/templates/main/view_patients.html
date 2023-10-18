@@ -1,0 +1,47 @@
+{% extends 'partials/base.html' %}		
+
+{%  block title %}  Index | {{block.super}} {% endblock %} <!-- To get the title tag - dynamically!!-->    <!-- FRANKLYN OLIHA  ID: 1611857-->
+
+{% block content %}
+<!-- Patients Record-->
+<div style="padding: 20px 100px 20px 100px">
+	<hr class="bg-white">
+		<a href="../../../" role="button" class="btn btn-dark btn-lg btn-block border-button-radius">Return To Menu</a>
+	<hr class="bg-white">
+
+	<div class="pt-4">
+		<center>
+			<h4><b> All Patients </b></h4>
+		</center>
+		
+		
+		<div class="row" style="margin-top: 20px">
+			{% for patient in all_patients %}
+			<div class="col-md-4"> 
+				<div style="border: 2px solid black; border-radius: 10px" class="p-2">
+					<b>Name : </b> {{patient.firstname}} {{patient.lastname}}
+					<br>
+					<b>Patient No. : </b> &nbsp; {{patient.patient_number}}
+					<br>
+					<b> Diagnosis : </b> &nbsp; {{patient.mental_illness}}
+					<br>
+					<b>Diagnosis Date : </b> &nbsp; {{patient.timestamp}}
+					<br>
+					<b> Doctor Comments : &nbsp; {{patient.form}} </b>
+					<br>
+					<!--br>
+					<b> Doctor Aproved : &nbsp; {{patient.approved}} </b>
+					<br-->
+					<center><a href="#" id="delete_button">
+						<button type="button" class="btn btn-dark border-button-radius mt-2 px-4 mb-2">View Full Details </button>
+					</a></center>
+				</div>
+				<br><br>			
+			</div>
+			{% endfor%}
+		</div>		
+		
+	</div>
+</div>
+
+{% endblock %}
